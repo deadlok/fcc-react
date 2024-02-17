@@ -74,7 +74,7 @@ And here. | Okay. | I think we get it.
   }
   render () {
     return ( 
-    <div className="App">
+    <div className="Markdown">
       <div className="editorWrap">
       <textarea id="editor" rows="20" cols="80" value ={this.state.input} onChange={this.handleChange}>
       </textarea>

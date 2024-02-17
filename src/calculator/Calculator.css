@@ -1,0 +1,116 @@
+.Absolute-Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+#calculator {
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
+  min-height: 500px;
+  height:auto;
+  font-size: 20px;
+  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color: pink;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px grey;
+}
+
+#display {
+  word-wrap:break-word;
+  font-family: LCD, sans-serif;
+  font-size: 50px;
+  max-width: 373px;
+  min-width: 373px;
+  min-height: 120px;
+  height: auto;
+  text-align: right;
+  justify-content: right;
+  padding: 10px;
+  margin: 7px 0;
+  /*background: rgb(52, 52, 146) ;
+  color: lightgoldenrodyellow; */
+  background: rgb(84, 131, 160); ;
+  color:  lightgray;
+  border-radius: 5px;
+}
+
+#digitpad {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin: 10px 0px;
+}
+
+#digitpad * {
+  border: 3px solid pink;
+  border-radius: 10px;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  padding: 20px;
+  font-weight: bolder;
+  background-color: gray;
+  color: white;
+}
+
+#zero {
+grid-column-start:1;
+grid-column-end:3;
+width: 150px !important;
+}
+
+#operator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#operator * {
+  border: 3px solid pink;
+  border-radius: 10px;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  padding: 20px;
+  font-weight: bolder;
+  background-color: gray;
+  color: white;
+
+}
+
+#clear {
+  grid-column-start:1;
+  grid-column-end:3;
+  width: 150px !important;
+}
+
+#clear {
+  background-color: lightcoral !important;
+}
+
+#equals {
+  background-color: rgb(152, 213, 233) !important;
+}
+
+#equals {
+  grid-column-start:1;
+  grid-column-end:3;
+  width: 150px !important;
+}
+
+#title {
+  width: 373px;
+  text-align: right;
+  font-family: fantasy;
+  color: white;
+  padding: 0px 5px;
+  letter-spacing: 0.2rem;
+  font-weight: bolder;
+  font-style: italic;
+}
