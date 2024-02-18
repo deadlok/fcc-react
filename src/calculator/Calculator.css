@@ -4,10 +4,12 @@
   justify-content: center;
   text-align: center;
   height: 100vh;
+  flex-direction:column;
 }
 
 #calculator {
   display: flex;
+  flex-direction:row;
   flex-wrap: wrap;
   width: 450px;
   min-height: 500px;
@@ -79,7 +81,7 @@ width: 150px !important;
   text-align: center;
   padding: 20px;
   font-weight: bolder;
-  background-color: gray;
+  background-color: rgb(79, 78, 78);
   color: white;
 
 }
@@ -113,4 +115,11 @@ width: 150px !important;
   letter-spacing: 0.2rem;
   font-weight: bolder;
   font-style: italic;
+}
+
+#signature {
+  width: 450px;
+  margin: 20px 0px;
+  color: darkgray;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

@@ -16,7 +16,7 @@ class Calculator extends React.Component {
   handleClick(event){
     this.setState( (state) => {  
 
-      const btn = event.target.innerText;
+      const btn = event.target.innerText.replace("X","*");
       const btnIsOper = "+-*/".includes(btn);
       const display = state.display;
       const word = state.word;
@@ -123,13 +123,14 @@ class Calculator extends React.Component {
         </div>
         <div id="operator">
           <div id="clear" onClick={this.handleClick}>AC</div>
-          <div id = "multiply" onClick={this.handleClick}>*</div>
+          <div id = "multiply" onClick={this.handleClick}>X</div>
           <div id = "divide" onClick={this.handleClick}>/</div>
           <div id = "add" onClick={this.handleClick}>+</div>
           <div id = "subtract" onClick={this.handleClick}>-</div>
           <div id="equals" onClick={this.handleClick}>=</div>
         </div>
       </div>
+      <div id="signature">Coded by: Man Lok Lee</div>
     </div>
     );
   }

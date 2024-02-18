@@ -95,6 +95,7 @@ class DrumMachine extends React.Component {
           {padComponents}
         </div>
       </div>
+      <div id="signature">Coded by: Man Lok Lee</div>
     </div>
     );
   }
