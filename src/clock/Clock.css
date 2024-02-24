@@ -1,0 +1,21 @@
+.Absolute-Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  flex-direction:column;
+}
+
+
+#signature {
+  width: 450px;
+  margin: 20px 0px;
+  color: darkgray;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+i {
+  width: 30px;
+  height: 30px;
+}

@@ -9,13 +9,14 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  Redirect,
+  //Link,
+  //Redirect,
  } from "react-router-dom";
 
  const Markdown = lazy(() => import('./markdown/Markdown'));
  const DrumMachine = lazy(() => import('./drum/DrumMachine'));
  const Calculator =  lazy(() => import('./calculator/Calculator'));
+ const Clock = lazy(() => import('./clock/Clock'));
  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,6 +28,7 @@ root.render(
 		  <Route path="/markdown" element={<Markdown/>}/>
       <Route path="/drum" element={<DrumMachine/>}/>
       <Route path="/calculator" element={<Calculator/>}/>
+      <Route path="/clock" element={<Clock/>}/>
 	  </Routes>
 </Router>
   </React.StrictMode>
