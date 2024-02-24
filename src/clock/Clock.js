@@ -124,6 +124,7 @@ class Clock extends React.Component {
     console.log(this.myInterval); 
     if (this.myInterval > 0) {
       console.log("stop timer"); 
+       //clear all because some unexpected instance have been created by server
       for (let i=0;i<10000;i++){
         clearInterval(i);
       }
