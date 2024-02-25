@@ -52,6 +52,7 @@ i {
   border-radius: 5px;
   width: 80px;
   padding-top:4px;
+  background-color: whitesmoke;
 }
 
 #break-increment {
@@ -90,6 +91,7 @@ i {
   border-radius: 5px;
   width: 80px;
   padding-top:4px;
+  background-color: whitesmoke;
 }
 
 #session-increment {
@@ -104,6 +106,41 @@ i {
   margin: 0px;
 }
 
+#clock {
+  display: block;
+}
+
+#ctrl-panel{
+  display: flex;
+  gap: 3px;
+}
+
+#start_stop, #reset {
+  width: 68px;
+  height: 68px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  padding-top:20px;
+  font-size: 24px;
+}
+
+#timer {
+  width: 100%;
+  word-wrap:break-word;
+  font-family: LCD, sans-serif;
+  font-size:150px;
+  padding: 10px;
+  margin: 7px 0;
+  background: rgb(84, 131, 160); ;
+  color:  lightgray;
+  border-radius: 5px;
+  letter-spacing: 0.3rem
+}
+
+#timer-label{
+  font-size: 28px !important;
+}
 .font-red {
-  color: red;
+  color: orange;
 }

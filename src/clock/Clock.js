@@ -132,7 +132,6 @@ class Clock extends React.Component {
     }
   }
 
-
   componentDidUpdate(){
     if (this.state.running && this.state.timeLeft === 0) {
       if (this.state.finished===true) {
@@ -186,14 +185,15 @@ class Clock extends React.Component {
   }
 
   render () {
-    let minutes = Math.floor(this.state.timeLeft/60000)
-    let seconds = (this.state.timeLeft%60000)/1000
+    let timeLeft= this.state.timeLeft
+    let minutes = Math.floor(timeLeft/60000)
+    let seconds = (timeLeft%60000)/1000
     let timeLeftFormat = minutes.toString().padStart(2,"0")+":"
                          +seconds.toString().padStart(2,"0")
     let timeClass = null;
     if (minutes === 0) timeClass="font-red";
   
-    return (    
+    return (
     <div className="Absolute-Center">
       <link rel="stylesheet" 
        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
@@ -201,31 +201,36 @@ class Clock extends React.Component {
        src="https://cdn.freecodecamp.org/testable-projects-fcc/audio/BeepSound.wav"></audio>
 
       <div id="clock">
+
         <div><h1>25+5 Clock</h1></div>
 
-        <div id="break-block">
-        <div id="break-label">Break Length</div>
-        <div id="break-length">{this.state.breakLength}</div>
-        <i id="break-increment" className="fa-solid fa-chevron-up" onClick={this.handleBreakTime}></i>
-        <i id="break-decrement" className="fa-solid fa-chevron-down" onClick={this.handleBreakTime}></i>
+        <div id="timer">
+          <div id="timer-label">{this.state.mode}</div>
+          <div id="time-left" className={timeClass}>{timeLeftFormat}</div>
         </div>
 
-        <div id="session-block">
-        <div id="session-label">Session Length</div>
-        <div id="session-length">{this.state.sessionLength}</div>
-        <i id="session-increment" className="fa-solid fa-chevron-up" onClick={this.handleSessionTime}></i>
-        <i id="session-decrement" className="fa-solid fa-chevron-down" onClick={this.handleSessionTime}></i>
-        </div>
+        <div id="ctrl-panel">
+          <div id="break-block">
+            <div id="break-label">Break Length</div>
+            <div id="break-length">{this.state.breakLength}</div>
+            <i id="break-increment" className="fa-solid fa-chevron-up" onClick={this.handleBreakTime}></i>
+            <i id="break-decrement" className="fa-solid fa-chevron-down" onClick={this.handleBreakTime}></i>
+          </div>
 
-        <div id="timer-label">{this.state.mode}</div>
-        <div id="time-left" className={timeClass}>{timeLeftFormat}</div>
-        <i id="start_stop" 
-         className={this.state.running?"fa-solid fa-pause":"fa-solid fa-play"}
-         onClick={this.handleStart}></i>
-        <i id="reset" className="fa-solid fa-power-off" onClick={this.handleReset}></i>
+          <div id="session-block">
+            <div id="session-label">Session Length</div>
+            <div id="session-length">{this.state.sessionLength}</div>
+            <i id="session-increment" className="fa-solid fa-chevron-up" onClick={this.handleSessionTime}></i>
+            <i id="session-decrement" className="fa-solid fa-chevron-down" onClick={this.handleSessionTime}></i>
+          </div>
+
+          <i id="start_stop" 
+          className={this.state.running?"fa-solid fa-pause":"fa-solid fa-play"}
+          onClick={this.handleStart}></i>
+          <i id="reset" className="fa-solid fa-power-off" onClick={this.handleReset}></i>
+        </div>
       </div>
       <div id="signature">Coded by: Man Lok Lee</div>
-
     </div>
     );
   }
