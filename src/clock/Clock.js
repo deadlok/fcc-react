@@ -9,6 +9,7 @@ class Clock extends React.Component {
       timeLeft: Clock.defaultSessionLength*60*1000,
       breakLength: Clock.defaultBreakLength,
       sessionLength: Clock.defaultSessionLength,
+      sessionNumber: 1,
       mode: Clock.defaultMode,
       running: false,
       finished: false
@@ -56,7 +57,7 @@ class Clock extends React.Component {
         if (event.target.id === "break-increment") newValue += 1;
         else if (event.target.id === "break-decrement") newValue -= 1;
   
-        if (newValue>0 && newValue <=60) {
+        if (newValue>=0 && newValue <=60) {
           if (prev.mode==="break"){
             this.iniTimeLeft = newValue*60*1000;
             return ({timeLeft: this.iniTimeLeft,
@@ -84,15 +85,16 @@ class Clock extends React.Component {
 
   handleReset(event){
     console.log("Reset");
-    this.iniTimeLeft = Clock.defaultSessionLength*60*1000;
-    this.setState(
-      {timeLeft: this.iniTimeLeft,
-       running: false,
-       mode: Clock.defaultMode,
-       sessionLength: Clock.defaultSessionLength,
-       breakLength: Clock.defaultBreakLength
+
+    this.iniTimeLeft = this.state.sessionLength*60*1000;
+
+    this.setState({
+      timeLeft: this.iniTimeLeft,
+      //running: false,
+      mode: Clock.defaultMode,
+      sessionNumber: 1,
     });
-    this.stopTimer();
+    //this.stopTimer();
     this.beepReset();
   }
 
@@ -152,6 +154,7 @@ class Clock extends React.Component {
             this.iniTimeLeft = state.sessionLength*60*1000;
             return ({mode:"session",
                     timeLeft: this.iniTimeLeft,
+                    sessionNumber: this.state.sessionNumber + 1,
                     running: true,
                     finished: false
             })
@@ -202,10 +205,10 @@ class Clock extends React.Component {
 
       <div id="clock">
 
-        <div><h1>25+5 Clock</h1></div>
+        <div><h1>Exercise Timer</h1></div>
 
         <div id="timer">
-          <div id="timer-label">{this.state.mode}</div>
+          <div id="timer-label">{this.state.mode} [ <font color='red' weight="bold">{this.state.sessionNumber}</font> ]</div>
           <div id="time-left" className={timeClass}>{timeLeftFormat}</div>
         </div>
 
