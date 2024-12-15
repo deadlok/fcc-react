@@ -87,6 +87,7 @@ class Clock extends React.Component {
     console.log("Reset");
 
     this.iniTimeLeft = this.state.sessionLength*60*1000;
+    this.startTime = Date.parse(Date());
 
     this.setState({
       timeLeft: this.iniTimeLeft,
@@ -95,6 +96,7 @@ class Clock extends React.Component {
       sessionNumber: 1,
     });
     //this.stopTimer();
+    
     this.beepReset();
   }
 
